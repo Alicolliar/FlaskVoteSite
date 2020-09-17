@@ -1,0 +1,17 @@
+{% extends "template.html" %}
+{% block content %}
+<title>Voting Site - Home</title>
+<h2>Welcome to the Voting Site Thing</h2>
+<p>This is a thing that lets you vote. It's built on either PHP/MySQL <i>or</i> Python's Flask/MySQL. Either way, your precious, expensive, data is stored on an SQL database.</p>
+{% if currElect %}
+<br><br>
+<h3>Current Election</h3>
+<h4>{{ currElect[1] }}</h4>
+<p>Ending Time: {{ currElect[2] }}</p>
+<a href="{{url_for('voting')}}"><button type="button">Vote!</button></a>
+
+<br>
+{% else %}
+<h3>No Election Running Currently. You can check past elections <a href="{{url_for('home')}}">here</a></h3>
+{% endif %}
+{% endblock %}

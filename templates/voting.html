@@ -1,0 +1,25 @@
+{% extends "template.html" %}
+{% block content %}
+<title>Voting Site - Voting</title>
+<h2>Vote Here!</h2>
+{% if question %}
+{{ question }}
+<form method="post">
+  <input type="radio" name="vote" value="yes">Yes</input><br>
+  <input type="radio" name="vote" value="no">No</input><br>
+  <input type="submit" name="voting">
+</form>
+{% else %}
+<h3>Login Here to Vote</h3>
+<form method="post">
+  Username:<br>
+  <input type="text" name="uname"></input><br>
+  Password:<br>
+  <input type="password" name="pwd"><br>
+  <input type="submit" name="login"><br>
+  {% if logMessage %}
+    <br>{{logMessage}}<br><br>
+  {% endif %}
+</form>
+{% endif %}
+{% endblock %}

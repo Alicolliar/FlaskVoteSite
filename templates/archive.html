@@ -1,0 +1,13 @@
+{% extends "template.html" %}
+{% block content %}
+<title>Voting Site - Archives</title>
+<h2>Archives</h2>
+<h3>View all past elections</h3>
+{% for data in foundData %}
+<div id="archiveBoxes">
+  <h4>Election Question: {{data[0]}}</h4><br><br>
+  <h3>Yes votes: {{data[1]}}</h3><br>
+  <h3>No votes: {{data[2]}}</h3><br>
+</div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "template.html" %}
+{% block content %}
+<title> Voting Site - Login Page</title>
+<h2>Admin's Login Page</h2>
+<h3>Login For Admins</h3>
+{% if message %}
+<h5>{{message}}</h5>
+{% endif %}
+<form method="POST">
+  Username:<br>
+  <input type="text" maxlength=25 name="uname"></input><br>
+  Password:<br>
+  <input type="password" maxlength=25 name="password"></input><br>
+  <input type="submit"></input><br>
+</form>
+{% endblock %}

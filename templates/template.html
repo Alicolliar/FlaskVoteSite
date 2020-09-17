@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type=text/css href="{{url_for('static', filename='css/styles.css')}}">
+  </head>
+  <body>
+    <header>
+      <h1>Voting Site</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="{{url_for('home')}}">Home</a></li>
+        <li><a href="{{url_for('voting')}}">Vote Here</a></li>
+        <li><a href="{{url_for('archive')}}">View Past Elections</a></li>
+        <li><a href="{{url_for('login')}}">Admin Login</a></li>
+      </ul>
+    </nav>
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+    <footer>
+      <h4>An Alicolliar Production</h4>
+    </footer>
+  </body>
+</html>

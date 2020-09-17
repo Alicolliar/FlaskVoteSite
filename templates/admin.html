@@ -1,0 +1,55 @@
+{% extends "template.html" %}
+{% block content %}
+<title>Voting Site - Admin Page</title>
+<h2>Admin Page</h2>
+{% if message %}
+  <br>{{message}}<br><br>
+{% endif %}
+<div id=adminBoxes>
+  <h3>Election Controls</h3>
+  <h4>Start New Election</h4>
+  <form method="POST">
+    Question of Election:<br>
+    <input type="text" name="question"></input><br>
+    End Date:<br>
+    <b>Date/Time Must Be In UTC or the backend has a shit</b>
+    <input type="datetime-local" name="endDate"></input><br>
+    <input type="submit" name="electMake"></input>
+  </form>
+  <h4>Cancel Ongoing Election</h4>
+  <form method="POST">
+    <input type="submit" name="electCancel">
+  </form>
+</div>
+<div id=adminBoxes>
+  <h3>User Controls</h3><br>
+  <h2>New User</h2>
+  <form method="POST">
+    New User's Username:<br>
+    <input type="text" name="user"></input><br>
+    New User's Password:<br>
+    <input type="text" name="pwd"></input><br>
+    New User's Level:<br>
+    <input type="list" list="num" name="level">
+    <datalist id="num">
+      <option value="1">Admin</option>
+      <option value="0">Voter</option>
+    </datalist>
+    <input type="submit" name="userAdd"></input>
+  </form>
+  <h2>Edit User</h2>
+  <form method="POST">
+    Enter User's ID:<br>
+    <input type="number" name="user"></input><br>
+    Choose Item to Change:<br>
+    <input type="list" list="toChange" name="level">
+    <datalist id="toChange">
+      <option value="Username"></option>
+      <option value="Password"></option>
+      <option value="User Level"></option>
+    </datalist>
+    <input type="text" name="newThing"></input>
+    <input type="submit" name="userChange"></input>
+  </form>
+</div>
+{% endblock %}
